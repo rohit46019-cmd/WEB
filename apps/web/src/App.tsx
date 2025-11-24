@@ -6,7 +6,7 @@ import Signup from "./components/auth/Signup";
 import ForgotPassword from "./components/auth/ForgotPassword";
 import RecycleBin from "./pages/RecycleBin";
 import Settings from "./pages/Settings";
-import AdminDashboard from "./components/admin/AdminDashboard";
+import AdminDashboard from "../components/admin/AdminDashboard";
 import { useAuthStore } from "./store/auth.store";
 
 export default function App() {
