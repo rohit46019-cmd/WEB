@@ -10,27 +10,33 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+
       - key: CLIENT_URL
         value: https://cloudbox-web.onrender.com
+
       - key: MONGO_URI
         sync: false
+
       - key: JWT_SECRET
         sync: false
+
       - key: ENC_SECRET
         sync: false
+
       - key: ENC_IV
         sync: false
+
       - key: STORAGE_QUOTA_MB
         value: "10240"
 
-  - type: web
+  - type: static
     name: cloudbox-web
-    env: static
     buildCommand: corepack enable && pnpm install --no-frozen-lockfile && pnpm --filter cloudbox-web build
     staticPublishPath: apps/web/dist
 
     envVars:
       - key: NODE_ENV
-        value: development           # ensures vite and react plugin install
+        value: production
+
       - key: VITE_API_URL
         value: https://cloudbox-server.onrender.com/api
