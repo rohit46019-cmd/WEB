@@ -1,7 +1,7 @@
 services:
   - type: web
     name: cloudbox-server
-    env: node
+    env: static  
     plan: free
     region: oregon
     buildCommand: corepack enable && pnpm install --no-frozen-lockfile && pnpm --filter cloudbox-server build
